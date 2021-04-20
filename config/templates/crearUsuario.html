@@ -1,0 +1,33 @@
+<div class="content-wrapper">
+    <div class="row ">
+        <div class="col-12 grid-margin">
+            <div class="card">
+                <div class="card-body">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <table class="table">
+                            <tr>
+                                <td>{{ form.username.label }}</td>
+                                <td>{{ form.username }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.email.label }}</td>
+                                <td>{{ form.email }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.password1.label }}</td>
+                                <td>{{ form.password1 }}</td>
+                            </tr>
+                            <tr>
+                                <td>{{ form.password2.label }}</td>
+                                <td>{{ form.password2 }}</td>
+                            </tr>
+                        </table>
+                        <input type="submit" name="Create User">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
