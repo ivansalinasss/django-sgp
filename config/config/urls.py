@@ -20,5 +20,6 @@ from webinf.views import login
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('webinf.urls'))
+    path('', include('webinf.urls')),
+    path('administracion/', include('administracion.urls'))
 ]

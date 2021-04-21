@@ -67,15 +67,15 @@
             <li class="nav-item nav-category">
                 <span class="nav-link">Navigation</span>
             </li>
-            <li class="nav-item menu-items">
-                <a class="nav-link" href="../../index.html">
+            <li class="nav-item menu-items {% if request.get_full_path == '/' %}active{% endif %}">
+                <a class="nav-link" href="/">
               <span class="menu-icon">
                 <i class="mdi mdi-speedometer"></i>
               </span>
                     <span class="menu-title">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item menu-items">
+            <li class="nav-item menu-items {% if request.get_full_path not in '/administracion' %}active{% endif %}">
                 <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false"
                    aria-controls="ui-basic">
               <span class="menu-icon">
@@ -86,12 +86,12 @@
                 </a>
                 <div class="collapse" id="ui-basic">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"><a class="nav-link" href="../../pages/ui-features/buttons.html">Crear
+                        <li class="nav-item"><a class="nav-link" href="{% url 'crearRoles' %}">Crear
                             roles</a>
                         </li>
                         <li class="nav-item"><a class="nav-link"
-                                                href="../../pages/ui-features/dropdowns.html">Crear usuarios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="../../pages/ui-features/typography.html">Asignar
+                                                href="{% url 'crearUsuarios' %}">Crear usuarios</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'usuarios' %}">Asignar
                             roles a usuarios</a>
                         </li>
                     </ul>
@@ -269,31 +269,17 @@
         <!-- partial -->
         <div class="main-panel">
             <div class="content-wrapper">
-                <div class="row ">
-                    <div class="col-12 grid-margin">
-                        <div class="card">
-                            <div class="card-body">
-                                <form method="POST" action="">
-                                    {% csrf_token %}
-                                    {{ form.username.label }}
-                                    {{ form.username }}
-
-                                    {{ form.email.label }}
-                                    {{ form.email }}
-
-                                    {{ form.password1.label }}
-                                    {{ form.password2 }}
-
-                                    {{ form.password1.label }}
-                                    {{ form.password2 }}
-
-                                    <input type="submit" name="Create User">
-                                </form>
+                {% block content %}
+                    <div class="row ">
+                        <div class="col-12 grid-margin">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h3>Hola Mundo</h3>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
+                {% endblock %}
             </div>
             <!-- content-wrapper ends -->
             <!-- partial:../../partials/_footer.html -->
