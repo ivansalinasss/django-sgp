@@ -1,7 +1,7 @@
 from django.urls import path
 
-from administracion.views import *
-from webinf.views import *
+from modulos.administracion.views import *
+from modulos.webinf.views import *
 
 urlpatterns = [
     path('usuarios/', usuarios, name='usuarios'),

@@ -16,10 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from webinf.views import login
-
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('webinf.urls')),
-    path('administracion/', include('administracion.urls'))
+    path('', include('modulos.webinf.urls')),
+    path('administracion/', include('modulos.administracion.urls'))
 ]

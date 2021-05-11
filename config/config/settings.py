@@ -36,8 +36,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # modulos/apps
-    'administracion.apps.AdministracionConfig',
-    'webinf.apps.WebinfConfig'
+    'modulos.administracion',
+    'modulos.webinf'
 ]
 
 MIDDLEWARE = [
@@ -126,4 +126,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-AUTH_PROFILE_MODULE = 'administracion.Rol'
+AUTH_USER_MODEL = 'administracion.Usuario'

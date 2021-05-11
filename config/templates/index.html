@@ -1,4 +1,6 @@
 {% load static %}
+<!DOCTYPE html>
+<html lang="es">
 {% include 'head.html' %}
 <body>
 <div class="container-scroller">
@@ -284,8 +286,7 @@
             <!-- content-wrapper ends -->
             <!-- partial:../../partials/_footer.html -->
             <footer class="footer">
-                <div class="d-sm-flex justify-content-center justify-content-sm-between">Footer</span>
-                </div>
+                <span class="d-sm-flex justify-content-center justify-content-sm-between">Footer</span>
             </footer>
             <!-- partial -->
         </div>
@@ -296,5 +297,7 @@
 <!-- container-scroller -->
 {% include 'footerscripts.html' %}
 
+{% block javascript %}
+{% endblock %}
 </body>
 </html>
